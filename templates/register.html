@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Blogas Blog Blogas</h3>
+                    <p class="text-light">Įrašai Jūsų įrašai! &nbsp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--Register-->
+<div class="container py-5">
+	<h1>Registruotis</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}
+		<button class="btn btn-primary" type="submit">Registruotis</button>
+	</form>
+	<p class="text-center">Jei jau turite paskyrą - <a href="/login">prisijunkite</a>.</p>
+</div>
+
+{% endblock %}
